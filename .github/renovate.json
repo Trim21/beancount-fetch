@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "@trim21",
+    "@trim21:monthly",
+    "@trim21:poetry"
+  ],
+  "separateMajorMinor": false,
+  "separateMinorPatch": false,
+  "rangeStrategy": "widen",
+  "packageRules": [
+    {
+      "groupName": "deps-docs",
+      "semanticCommitScope": "docs",
+      "packagePatterns": [
+        "^sphinx"
+      ],
+      "rangeStrategy": "pin"
+    },
+    {
+      "depTypeList": [
+        "dev-dependencies"
+      ],
+      "rangeStrategy": "pin"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "beancount-fetch"
+version = "0.0.0"
+description = ""
+authors = ["Trim21 <i@trim21.me>"]
+readme = 'README.md'
+repository = 'https://github.com/Trim21/beancount-fetch'
+license = 'MIT'
+packages = [{ include = 'beancount_fetch' }]
+classifiers = [
+  'Development Status :: 4 - Beta',
+  'License :: OSI Approved :: MIT License',
+  'Topic :: Software Development :: Version Control :: Git',
+  'Programming Language :: Python :: 3 :: Only',
+  'Programming Language :: Python :: 3.6',
+  'Programming Language :: Python :: 3.7',
+  'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: Implementation :: CPython',
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+# dependencies
+beancount = "^2.3.2"
+
+[tool.poetry.dev-dependencies]
+# tests
+pytest = "==6.0.1"
+pytest-github-actions-annotate-failures = "==0.1.0"
+coverage = "==5.2.1"
+# linter and formatter
+pre-commit = "==2.7.1"
+mypy = "^0.770"
+flake8 = "3.8.3"
+flake8-comprehensions = "==3.2.3"
+flake8-bugbear = "==20.1.4"
+flake8-mutable = "1.2.0"
+flake8-eradicate = "^0.4.0"
+flake8-pep3101 = "^1.3.0"
+flake8-2020 = "^1.6.0"
+flake8-pytest-style = "^1.3.0"
+
+[tool.isort]
+default_section = 'THIRDPARTY'
+indent = '    '
+known_first_party = 'beancount_fetch'
+length_sort = true
+line_length = 88
+multi_line_output = 3
+no_lines_before = 'LOCALFOLDER'
+use_parentheses = true
+include_trailing_comma = true
+
+[tool.pytest.ini_options]
+addopts = '-rav'
